@@ -1,3 +1,11 @@
+Welcome to a game system I designed and developed around late 2003 and uploaded to the NWN Vault around February, 2004. The NWN Vault still houses the system, which you can download by visitng [the Vault](https://neverwintervault.org/project/nwn1/script/kittrells-persistent-banking-161b).
+
+This system was also incorporated into another major mod, [Nordock](https://neverwintervault.org/project/nwn1/module/nordock-cep-prc-plagued-version-11) and was later ported to a MySQL version as the [Fast French](https://neverwintervault.org/project/nwn1/prefab/kpb-nwnxfast-french-persistent-banking) version.
+
+I am uploading it here for legacy purposes because it technically is one of my earliest game development projects that is still around. So, enjoy. If I'm able to get the Aurora Toolset installed and working, I will pull the code into their own files under a different directory, but for now, this works.
+
+
+
 -=- Kittrell's Persistent Banking System v1.6 -=-
 
 This is a banking system compatible with version 1.61 Final from Bioware.
