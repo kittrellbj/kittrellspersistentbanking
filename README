@@ -1,0 +1,180 @@
+-=- Kittrell's Persistent Banking System v1.6 -=-
+
+This is a banking system compatible with version 1.61 Final from Bioware.
+It REQUIRES this version of the game (1.61 or higher) to run properly.  It may work on
+older versions of the game, up to version 1.30 beta from Bioware, but it is not supported under previous versions.  The test module will NOT work on anything before Hordes of the Underdark.
+
+--------------------------------
+Features and Operations:
+--------------------------------
+
+Highly Recommended:  Create a character or use a pre-generated character in the demonstration
+module included with this package to understand how the system works in general before
+attempting to modify the data or implement this into your module.
+
+
+Take a look at the module included with this .zip file.  It shows how the system works.
+Enter the module with a character, deposit some money, leave, load the module again,
+check your balance, take some money out, check the balance, leave the module, exit Neverwinter,
+enter the game again and check your balance, etc.  
+
+
+It saves the amount of gold in your vault
+no matter what you do to try and break it.  If you do happen to find a way to break it, please let me
+know! :)  Post to the NWVault under this script's page.
+
+*NEW in 1.6b:  New spoken commands for the banker, see below!*
+
+*New in 1.6b: In addtion to banking, the system now includes persistent item storage through a bank vault chest.  It can
+store up to 30 items for players (but not gold or other stackables, use the banker to store gold coins).  Try it out,
+looks beautiful, has low module overhead, and runs securely and quite nicely.  Players must purchase "storage rights"
+from a banker for 100 gold before they can use the storage container (to prevent one-time-logins from expanding the size
+of your database, as well as adding more realism to the banking system, i.e. requiring a fee for a safety deposit box.)
+
+
+*New in 1.6b: In addition to the item storage, an Investment Broker has been added to this update.  He will only allow players to invest
+in one thing at a time, and players must wait 1 day before they can assess their investment (find out the results, good or
+bad).  Players may also cancel their investment for a 10% fee of their investment cost (to cover the bank's time and 
+applicable fees.)
+
+--------------------------------
+Fixes, Updates, and Additions:
+--------------------------------
+
+* 1.6b Fixes/Additions:
+- Added support for balance reports on short-term interest assessment.
+- Added support for bank gold bullion bonds.
+	- Bullion Bonds can be used in lieu of large sums of gold, mainly
+	for more secure trading amongst players.
+	- Bullion Bonds come in a 10,000 gold, 25,000 gold, and 50,000 gold
+	note, which can be redeemed at a banker.
+	- Bullion Bonds can be received from a banker in exchange for the 
+	appropriate gold amount.
+- Added support for chat message-style bank commands!
+	- "deposit X gold", where X is a positive value
+	- "withdraw X gold", where X is a positive value
+	- "deposit all", deposits all gold
+	- "withdraw all", withdraws all gold
+	- "balance", displays a balance of the player's account
+- Added the Persistent Item Vault (Placables -> Containers & Switches)
+	- Allows players to deposit up to 30 items in a persistent bank vault.
+	- Charges a 1-time fee of 100 gold coins to place items within.
+	- Does not allow gold/stackables to be placed within the vault.
+- Added the Investment Broker (Creatures -> Other -> Investment Broker)
+	- Allows players to "play the stock market", so to speak.
+	- Random system that takes a player's investment, plugs it into a random list of outcomes,
+	prints the outcome to the character, and (if applicable) rewards the character for taking
+	a risk on an investment.
+- Many Banker spoken returns fixed.
+- Some code cleaned up for organization/optimization.
+
+* 1.6a Fixes:
+- Fixed Compatibility issues with Bioware's OnActivateItem script that came with Hordes of the Underdark.  The kpb_on_activate.css file can be placed in the OnActivateItem event, and now it is compatible with the Bioware default module event.
+- Fixed an issue with the wrong messages being said by the NPC banker when players are not holding a certain amount of gold.
+
+* 1.5b Fixes: This version adds the ability to take out loans, repay the loans, as well as acquire interest on money that you deposit.
+
+--------------------------------
+To install:
+--------------------------------
+
+The scripts, conversation, banker, item vault, and investment broker are in the kpb_install.erf file.  It includes:
+
+--> Scripts
+
+kpb_assessint.nss, kpb_bank_convo.nss, kpb_banker_spawn.nss, kpb_bond_10.nss
+kpb_bond_25.nss, kpb_bond_50.nss, kpb_bond_check.nss, kpb_credittoken.nss
+kpb_dateinc.nss, kpb_deposit100.nss, kpb_deposit1000.nss, kpb_deposit10000.nss
+kpb_deposit_all.nss, kpb_int_balance.nss, kpb_inv_assess.nss, kpb_invest_can.nss
+kpb_invest_food.nss, kpb_invest_ing.nss, kpb_invest_markt.nss, kpb_invest_merc.nss
+kpb_invest_trade.nss, kpb_loan_balance.nss, kpb_loan_chkhigh.nss, kpb_loan_chklow.nss
+kpb_loan_chkmed.nss, kpb_loan_off.nss, kpb_loan_on.nss, kpb_loanaccess1.nss, kpb_loanaccess2.nss
+kpb_loanaccess3.nss, kpb_loanaccess4.nss, kpb_on_activate.nss, kpb_payloan.nss
+kpb_payloan_all.nss, kpb_ppis_disturb.nss, kpb_ppis_start.nss, kpb_rentalassign.nss
+kpb_setint_1.nss, kpb_setint_2.nss, kpb_setint_3.nss, kpb_setint_4.nss, kpb_setint_5.nss
+kpb_showbalance.nss, kpb_takeloan100.nss, kpb_takeloan1000.nss
+kpb_timeadvance.nss (For Testing Purposes), kpb_timeadvance2.nss (For Testing Purposes)
+kpb_tkeloan10000.nss, kpb_withdraw100.nss, kpb_withdraw1000.nss, kpb_wthdraw10000.nss
+kpb_withdraw_all.nss
+
+--> Items
+
+kpb_timetool (Time Advancement Tool, For Testing timed events in KPB system)
+kpbwand.uti (Global Economy Stone item)
+
+--> Conversations
+
+kpb_banker.dlg (Banker Conversation)
+kpb_broker.dlg (Investment Broker Conversation)
+kpb_timetool.dlg (Time Advancement Tool Conversation)
+kpb_wand.dlg (GES item Conversation)
+
+-> Import the kpb_install.erf into your module.
+
+-> The banker will appear under NPC's -> Other.  Simply place him down in a bank.
+	-> To include the Item Bank Vault, place the 
+	Placables -> Containers & Switches -> Item Bank vault (not Item Bank Vault (unique) ) into your
+	bank.
+	-> To include the Investment Broker, place the
+	NPC's -> Other -> Investment Broker into your bank.
+
+-> Under Module Properties, under the Event tab, set OnActivateItem script to kpb_on_activate.nss, or incorporate kpb_on_activate.nss into your own OnActivateItem script.
+
+-> Save your module.  It is recommended, but not required, to Build your module, then Save it.
+
+-> That should be it.  If you experience any other problems, as said above, check the NWVault and post there.  Thanks!
+
+--------------------------------
+Features List:
+--------------------------------
+
+-> General Features:
+
+* Ability to store money as deposits, with the ability to withdraw that money later on demand.
+
+* Ability to take out loans or acquire interest on your own deposits.
+
+* Loans automatically acquire interest per simple math functions every week, up to six weeks.
+
+* Ability for players to rent an item vault to store up to 30 items.
+
+* Ability for players to "play the stock market" through the Investment Broker and an
+investment system.
+
+* Designed for efficiency and speed of running.  Large scripts designed generically with "variable swapping" rather than standard variables per each script (see how kpb_payloan works, and how kpb_loanaccessX.nss controls it).
+
+* Designed for security and ease.  Simply installation instructions put YOU ahead of the game.  Catch-alls installed
+into the system for improved security and efficiency.
+
+* Easy to update via key control files (kpb_credit_token.nss, mainly).
+
+* DM-usable Global Economy Stone, which allows DM's to control the interest rates.
+
+* Included Time Advancement Tool, for testing timed events that are in the system, such as interest and investments.
+
+* Large dialogue-driven help files and information to make it easy for players to use the bank and learn about features.
+
+-> Technical Aspects
+* Loan balances, interest rates, and bank account balances stored and accessed on demand for up-to-date information at all times.
+
+* Catch-all's installed to keep the system fair.
+
+* Credit plays a roll in the system.  Each person receives a different credit rating depending on their loan history.  If they fail to pay their payments on time, they get negative points to their credit report.  If they pay on time, they receive good marks on their credit report.
+
+* Interest rates are based on both the credit report and global variables.  i.e. If the global interest is 5% and the person has a "terrible" credit rating (which yields a 25% rate), their personal interest rate is 30%, and they must take loans out at that percentage.  Thus, there is a big incentive to build good credit with the bank.  (For "excellent" credit, with a 5% global, the personal rate would become 9%, since the excellent credit bracket has a 4% rate.)
+
+* As you can see from the above system, no one can deposit money at high credit ratings and still make more than their loan is costing in payments, since the global interest adds to their bracket interest rate. Since deposits earn the global interest, they will always be paying more on a loan than they can earn in interest on a savings account.  This prevents a mistake on the DM's part of raising the interest rate higher than the "excellent" credit people's personal rate.
+
+--------------------------------
+Credits & Signature
+--------------------------------
+
+- Brian J. Kittrell, coding, madman behind the mathematics, general nut.
+
+Special Thanks: Thanks to Warspawn for create the standard functions, used in kpb_dateinc.nss.  This system would not be what it is without these functions!  View the entry at http://nwvault.ign.com/Files/scripts/data/1026158289662.shtml
+
+Special Thanks: Thanks to OldManWhistler for his developments on persistent item storage through a chest, the database, and a transfer liason.  view his work at http://nwvault.ign.com/Files/scripts/data/1064218751211.shtml
+
+-=-=- Any questions, comments, or help requests should be posted to the NWVault for this scripting package.  You can reach the page for this system at:
+
+http://nwvault.ign.com/Files/scripts/data/1077111565000.shtml
