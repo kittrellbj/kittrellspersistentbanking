@@ -174,12 +174,10 @@ into the system for improved security and efficiency.
 * As you can see from the above system, no one can deposit money at high credit ratings and still make more than their loan is costing in payments, since the global interest adds to their bracket interest rate. Since deposits earn the global interest, they will always be paying more on a loan than they can earn in interest on a savings account.  This prevents a mistake on the DM's part of raising the interest rate higher than the "excellent" credit people's personal rate.
 
 --------------------------------
-Credits & Signature
+Credits & Much Appreciated Help
 --------------------------------
 
-- Brian J. Kittrell, coding, madman behind the mathematics, general nut.
-
-Special Thanks: Thanks to Warspawn for create the standard functions, used in kpb_dateinc.nss.  This system would not be what it is without these functions!  View the entry at http://nwvault.ign.com/Files/scripts/data/1026158289662.shtml
+Special Thanks: Thanks to Warspawn for creating the standard functions, used in kpb_dateinc.nss.  This system would not be what it is without these functions!  View the entry at http://nwvault.ign.com/Files/scripts/data/1026158289662.shtml
 
 Special Thanks: Thanks to OldManWhistler for his developments on persistent item storage through a chest, the database, and a transfer liason.  view his work at http://nwvault.ign.com/Files/scripts/data/1064218751211.shtml
 
